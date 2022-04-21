@@ -1,0 +1,94 @@
+.footer {
+    &__container {
+        margin-top: rem(100);
+        border: 1px solid #777777;
+        padding: 0;
+        @media (max-width: $tablet) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    &__menu {
+        font-family: "Gotham";
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: 1;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        @include adaptiveValue("font-size", 18, 12);
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: rem(30);
+        line-height: 1;
+        letter-spacing: -0.005em;
+        position: relative;
+
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            gap: rem(10);
+        }
+    }
+
+    &__title {
+        font-weight: 900;
+        @include adaptiveValue("font-size", 30, 14);
+    }
+
+    &__social {
+        display: flex;
+        gap: rem(40);
+        font-size: rem(25);
+        @media (min-width: $tablet) {
+            position: absolute;
+            left: calc(50% - rem(45));
+        }
+    }
+
+    &__social-link {
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: #4000f7;
+            }
+        }
+    }
+
+    &__mail {
+        font-weight: 450;
+        text-transform: lowercase;
+        @include adaptiveValue("font-size", 22, 12);
+    }
+
+    &__mail-link {
+    }
+}
+.menu {
+    &__body {
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        background-color: #181818;
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            gap: rem(10);
+            padding: rem(15);
+        }
+    }
+
+    &__item {
+        @media (min-width: $tablet) {
+            padding: rem(30);
+        }
+    }
+
+    &__link {
+    }
+}

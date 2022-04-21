@@ -1,0 +1,50 @@
+.section-header{
+    @include adaptiveValue("padding-top", 50, 28);
+    @include adaptiveValue("padding-bottom", 50, 16);
+    background-color: #181818;
+    & [class*="__container"]{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: rem(1);
+        @media (max-width:em(1200)){
+            flex-direction: column;
+            align-items: flex-start;
+            gap: rem(22);
+        }
+    }
+    font-family: 'Gotham';
+    overflow: hidden;
+}
+.section-text{
+    flex: 0 0 percent(800, 1650);
+}
+.section-title{
+    font-weight: 500;
+    @include adaptiveValue("font-size", 40, 17);
+    line-height: 1;
+    margin-bottom: rem(25);
+    @include adaptiveValue("margin-bottom", 25, 9);
+}
+.section-subtext{
+    font-weight: 400;
+    font-size: rem(16);
+    @include adaptiveValue("font-size", 16, 11);
+    line-height: 1;
+    letter-spacing: 0.05em;
+    color: #B9B9B9;
+}
+.common-button{
+    font-family: 'Gotham';
+    @include adaptiveValue("padding-left", 35, 12);
+    @include adaptiveValue("padding-right", 35, 12);
+    @include adaptiveValue("padding-top", 12, 6);
+    @include adaptiveValue("padding-bottom", 12, 6);
+    border-radius: rem(100);
+    font-weight: 700;
+    @include adaptiveValue("font-size", 16, 8);    
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+}

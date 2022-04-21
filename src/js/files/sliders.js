@@ -28,16 +28,16 @@ function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
 
-	if (document.querySelector('.gallery-swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.news-swiper')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.gallery-swiper', { // Указываем скласс нужного слайдера
+		new Swiper('.news-swiper', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Autoplay, Navigation, Pagination],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1,
-			spaceBetween: 20,
+			slidesPerView: "auto",
+			spaceBetween: 22.5,
 			autoHeight: false,
 			speed: 800,
 
@@ -77,16 +77,15 @@ function initSliders() {
 			},
 
 			// Брейкпоинты
-			/*
+
 			breakpoints: {
 				320: {
-					slidesPerView: 'auto',
-
-				},
-				1268: {
 					slidesPerView: 1,
 				},
-			},*/
+				768: {
+					slidesPerView: 'auto',
+				},
+			},
 			// События
 			on: {
 

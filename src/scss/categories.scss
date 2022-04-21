@@ -1,0 +1,126 @@
+.page {
+    &__categories {
+    }
+}
+.categories {
+    &__header {
+    }
+
+    &__container {
+
+    }
+
+    &__header-text {
+    }
+
+    &__title {
+    }
+
+    &__subtext {
+    }
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50%, auto));
+        @media (max-width: em(1200)){
+            grid-template-columns: repeat(auto-fit, minmax(100%, auto));
+        }
+    }
+    &__show-all {
+        background: rgba(133, 133, 133, 0.3);
+        border: 1px solid #858585;
+        align-self: flex-end;
+    }
+    &__banner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        position: relative;
+        overflow: hidden;
+    }
+    &__mobile{
+        button {
+            font-size: rem(16);
+            width: 100%;
+            margin: rem(22) 0;
+            padding: rem(12) 0;
+        }
+    }
+}
+.categories-banner {
+
+    &__bg-img {
+        position: absolute;
+        top: -25%;
+        left: 0;
+        filter: blur(20px);
+        z-index: -1;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        
+    }
+
+    &__forward-img {
+        pointer-events: none;
+        height: auto;
+        flex: 0 0 50%;
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__text-box {
+        flex:  1 1 auto;
+        margin-left: auto;
+        margin-top: rem(50);
+        font-family: 'Gotham';
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: rem(30);
+        @include adaptiveValue("font-size", 30, 12);
+        line-height: 100%;
+        letter-spacing: 0.05em;
+        @include adaptiveValue("margin-bottom", 24, 9);
+    }
+
+    &__text {
+        font-weight: 400;
+        @include adaptiveValue("font-size", 16, 8);
+        line-height: 131.5%;
+        @include adaptiveValue("margin-right", 25, 10);
+    }
+
+    &__footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        font-family: 'Roboto';
+        font-weight: 600;
+        @include adaptiveValue("padding", 30, 12);
+        @include adaptiveValue("font-size", 22, 9);
+        line-height: 100%;
+        margin-top: auto;
+    }
+
+    &__footer-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &::after{
+			@extend %ic;
+			content: "\e904";
+			margin-left: rem(20);
+			font-size: rem(20);
+            @include adaptiveValue("font-size", 20, 12);
+		}
+    }
+}

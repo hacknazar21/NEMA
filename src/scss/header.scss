@@ -14,7 +14,9 @@
 		width: 100%;
 		height: 100%;
 		background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.48) 100%), url(@img/headerbg.png) center/cover no-repeat;
-		animation: headerbg 15s ease-in-out 0s infinite;
+		@media (min-width:em(1200)){
+			animation: headerbg 15s ease-in-out 0s infinite;
+		}
 		z-index: 1;
 	}
 	&__content{
@@ -29,20 +31,20 @@
 	&__menu {
 	}
 	&__title-decor{
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		position: absolute;
 		font-weight: 900;
+		@include adaptiveValue("font-size", 30, 11);
 		font-size: rem(30);
 		letter-spacing: 0.06em;
-		line-height: 100%;
-		width: rem(310);
+		line-height: 250%;
 		&::before{
 			content: "";
 			position: absolute;
 			width: 100%;
-			height: rem(77);
+			height: 100%;
 			border-radius: rem(100);
 			z-index: -1;
 			animation: headertitle ease-in-out 0s infinite;
@@ -51,71 +53,86 @@
 			content: "";
 			position: absolute;
 			z-index: -1;
-			width: rem(100);
-			height: rem(100);
+			@include adaptiveValue("width", 100, 35);
+			@include adaptiveValue("height", 100, 35);
 		}
 		&:first-child{
 			filter: drop-shadow(0px 20px 30px rgba(150, 89, 2, 0.5));
-			transform:  rotate(-4deg);
 			transform-origin: bottom right;
-			top: calc(-50% + rem(20));
 			right: 0;
 			padding: 0 rem(40);
-			
+			@include adaptiveValue("padding-left", 40, 15);
+			@include adaptiveValue("padding-right", 40, 15);
+			@media (min-width:em(1200)){
+				top: calc(-50%);
+				transform:  rotate(-4deg);
+			}
+			@media (max-width:em(1200)){
+				bottom: -40%;
+				right: 10%;
+				transform: rotate(1.27deg);
+			}
 			&::before{
-				top: rem(-20);
+				top: 0;
 				right: 0;
 				background-color: #D38312;
 				animation-duration: 3s;
-				
 			}
 			&::after{
-				width: rem(120);
-				height: rem(120);
-				top: rem(-53);
+				@include adaptiveValue("width", 120, 45);
+				@include adaptiveValue("height", 120, 45);
+				top: calc(-50%);
+				left: calc(25%);
 				transform: rotate(4.78deg);
 				background: url(@img/star.svg) center / contain no-repeat;
 				z-index: -1;
 			}
 		}
 		&:last-of-type{
-			bottom: calc(-50% + rem(20));
 			left: 0;
-			padding: 0 rem(40);
+			@include adaptiveValue("padding-left", 40, 15);
+			@include adaptiveValue("padding-right", 40, 15);
 			filter: drop-shadow(0px -20px 30px rgba(64, 0, 247, 0.3));
-			transform: rotate(5deg);
 			transform-origin: bottom left;
-
+			@media (min-width:em(1200)){
+				bottom: calc(-50%);
+				transform: rotate(5deg);
+			}
+			@media (max-width:em(1200)){
+				top: -5%;
+				left: 5%;
+				transform: rotate(-14.74deg);
+			}
 			&::before{
 				content: "";
 				position: absolute;
-				top: rem(-20);
+				top: 0;
 				left: 0;
 				animation-duration: 5s;
 				background-color: #4000F7;
 			}
 			&::after{
-				top: rem(-33);
-				left: rem(40);
-				
+				top: -20%;
+				left: 20%;
 				background-color: #4000F7;
 				border-radius: 50%;
 			}
 		}
 	}
 	&__title-box {
-		position: relative;
-		
 	}
 
 	&__title {
 		font-weight: 900;
-		@include adaptiveValue("font-size", 150, 20, 1920, 360);
+		@include adaptiveValue("font-size", 150, 40, 1920, 360);
 		line-height: 1;
 		letter-spacing: -0.005em;
-		margin-bottom: rem(21);
-
-		animation: headertitleshow 2s ease 0s 1;
+		@include adaptiveValue("margin-bottom", 21, 53);
+		position: relative;
+		span{
+			display: block;
+			animation: headertitleshow 2s ease 0s 1;
+		}
 	}
 
 	&__subtitle {
@@ -123,8 +140,9 @@
 		font-family: 'Gotham';
 		font-weight: 500;
 		font-size: rem(22);
+		@include adaptiveValue("font-size", 22, 12);
 		line-height: 131.5%;
-		margin-bottom: rem(50);
+		@include adaptiveValue("margin-bottom", 50, 16);
 		animation: headersubtitleshow 2s ease 0s 1;
 
 	}
@@ -135,12 +153,19 @@
 		font-size: rem(20);
 		line-height: 131.5%;
 		padding: rem(21) rem(144);
+		@include adaptiveValue("padding-top", 21, 14);
+		@include adaptiveValue("padding-bottom", 21, 14);
+		@include adaptiveValue("padding-left", 144, 103);
+		@include adaptiveValue("padding-right", 144, 103);
 		border: 1px solid #FFFFFF;
 		border-radius: 100px;
 		position: relative;
 		overflow: hidden;
 		transition: color 0.8s ease 0s;
-
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 auto;
 		&::before{
 			content: "";
 			position: absolute;
@@ -153,6 +178,15 @@
 			z-index: -1;
 			transform: translateY(101%);
 			border-radius:  50% 50% 0 0;
+		}
+
+		&::after{
+			@extend %ic;
+			content: "\e904";
+			margin-left: rem(20);
+			font-size: rem(20);
+			transform: rotate(-45deg);
+			transform-origin: center;
 		}
 		@media (any-hover: hover) {
 			&:hover {
@@ -191,13 +225,19 @@
 		font-size: rem(12);
 		line-height: 100%;
 		margin-top: rem(20);
+		color: #B9B9B9;
 	}
 }
 .menu {
 
 	&__icon {
 		position: absolute;
-		left: rem(100);
+		@media (min-width:em(1200)){
+			left: rem(100);
+		}
+		@media (max-width:em(1200)){
+			right: rem(15);
+		}
 		top: rem(40);
 		width: rem(64);
 		height: rem(64);

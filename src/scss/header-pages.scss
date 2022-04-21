@@ -1,0 +1,26 @@
+.header-pages {
+    &__content {
+        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.48) 100%),
+            url(@img/headerbg.png) center/cover no-repeat;
+    }
+
+    &__container {
+        display: flex;
+        min-height: rem(500);
+        align-items: center;
+    }
+
+    &__title-box {
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    &__subtitle {
+        @include adaptiveValue("font-size", 40, 12);
+    }
+
+    &__title {
+        @include adaptiveValue("font-size", 150, 32);
+        letter-spacing: -0.005em;
+    }
+}

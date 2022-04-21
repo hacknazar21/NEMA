@@ -1,0 +1,74 @@
+.page {
+
+    &__festival {
+    }
+}
+.festival {
+    &__header {
+        position: relative;
+    }
+
+    &__container {
+
+    }
+
+    &__header-text {
+        flex: 1 1 auto;
+    }
+
+    &__title {
+        position: relative;
+        font-family: 'PilatExtended';
+        font-weight: 900;
+        @include adaptiveValue("font-size", 90, 39);
+        line-height: 100%;
+        margin: 0;
+        z-index: 1;
+        @media (max-width: em(1200)){
+            width: 200%;
+        }
+    }
+
+    &__header-img {
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        @media (max-width: em(1200)){
+            top: 100%;
+        }
+        img{
+            position: absolute;
+            width: auto;
+            height: 100%;
+            &._1{
+                right: 40%;
+                bottom: -20%;
+                width: rem(131);
+                height: auto;
+            }
+            &._2{
+                right: 30%;
+                top: -45%;
+                width: rem(205);
+                height: auto;
+            }
+            &._3{
+                right: -5%;
+                top: -30%;
+                width: rem(272);
+                height: auto;
+            }
+            &._4{
+                right: 7%;
+                top: -30%;
+                width: rem(324);
+                height: auto;
+            }
+            
+        }
+    }
+
+}
