@@ -67,28 +67,28 @@
 
     &__mail-link {
     }
-}
-.menu {
-    &__body {
-    }
-
-    &__list {
-        display: flex;
-        justify-content: space-between;
-        background-color: #181818;
-        @media (max-width: $tablet) {
-            flex-direction: column;
-            gap: rem(10);
-            padding: rem(15);
+    .menu {
+        &__body {
         }
-    }
 
-    &__item {
-        @media (min-width: $tablet) {
-            padding: rem(30);
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            background-color: #181818;
+            @media (max-width: $tablet) {
+                flex-direction: column;
+                gap: rem(10);
+                padding: rem(15);
+            }
         }
-    }
 
-    &__link {
+        &__item {
+            @media (min-width: $tablet) {
+                padding: rem(30);
+            }
+        }
+
+        &__link {
+        }
     }
 }

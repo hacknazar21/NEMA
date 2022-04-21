@@ -1448,20 +1448,20 @@ input {
     font-size: 0.75rem;
   }
 }
-.menu__list {
+.footer .menu__list {
   display: flex;
   justify-content: space-between;
   background-color: #181818;
 }
 @media (max-width: 61.99875em) {
-  .menu__list {
+  .footer .menu__list {
     flex-direction: column;
     gap: 0.625rem;
     padding: 0.9375rem;
   }
 }
 @media (min-width: 61.99875em) {
-  .menu__item {
+  .footer .menu__item {
     padding: 1.875rem;
   }
 }
