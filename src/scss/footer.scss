@@ -1,13 +1,12 @@
 .footer {
+    background-color: #181818;
     &__container {
-        margin-top: rem(100);
-        border: 1px solid #777777;
-        padding: 0;
+        padding-top: rem(60);
+        padding-bottom: rem(75);
         @media (max-width: $tablet) {
-            display: flex;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            align-items: flex-start;
+            text-align: center;
+            padding-bottom: rem(20);
+            padding-top: rem(20);
         }
     }
 
@@ -24,14 +23,15 @@
     &__bottom {
         display: flex;
         justify-content: space-between;
-        padding: rem(30);
+        margin-bottom: rem(45);
         line-height: 1;
         letter-spacing: -0.005em;
         position: relative;
 
         @media (max-width: $tablet) {
             flex-direction: column;
-            gap: rem(10);
+            gap: rem(20);
+            margin-bottom: rem(20);
         }
     }
 
@@ -41,13 +41,14 @@
     }
 
     &__social {
+        @media (min-width: $tablet) {
+            display: none;
+        }
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: rem(40);
         font-size: rem(25);
-        @media (min-width: $tablet) {
-            position: absolute;
-            left: calc(50% - rem(45));
-        }
     }
 
     &__social-link {
@@ -68,27 +69,44 @@
     &__mail-link {
     }
     .menu {
-        &__body {
+        @media (max-width: $tablet) {
+            display: none;
         }
+    }
+    &__mobile {
+        li {
+            list-style-type: none;
+            padding: rem(5) rem(15);
+            background: rgba(116, 9, 166, 0.2);
+            border: 1px solid #7409a6;
+            border-radius: rem(100);
 
-        &__list {
+            &:first-child {
+                grid-area: 1;
+            }
+            &:nth-child(2) {
+                grid-area: 2;
+            }
+            &:nth-child(3) {
+                grid-area: 3;
+            }
+            &:nth-child(4) {
+                grid-area: 4;
+            }
+            &:last-child {
+                grid-area: 5;
+            }
+        }
+        a {
+            font-size: rem(14);
+        }
+        &-top {
+            margin-bottom: rem(15);
+        }
+        &-top,
+        &-bottom {
             display: flex;
             justify-content: space-between;
-            background-color: #181818;
-            @media (max-width: $tablet) {
-                flex-direction: column;
-                gap: rem(10);
-                padding: rem(15);
-            }
-        }
-
-        &__item {
-            @media (min-width: $tablet) {
-                padding: rem(30);
-            }
-        }
-
-        &__link {
         }
     }
 }

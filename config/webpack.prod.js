@@ -25,7 +25,7 @@ if (!pugPages.length) {
 		replace: [
 			{ regex: '../img', to: 'img' },
 			{ regex: '@img', to: 'img', },
-			{ regex: '@url', to: '/NFT/dist', },
+			{ regex: '@url', to: '/nema/', },
 			{ regex: 'NEW_PROJECT_NAME', to: rootFolder }
 		],
 	})]

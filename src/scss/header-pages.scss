@@ -1,7 +1,22 @@
 .header-pages {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.48) 100%),
+        url(@img/headerbg.png) center/cover no-repeat;
+    .header__container {
+        position: relative;
+        width: auto;
+
+        @media (max-width: $tablet) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0;
+            .header__menu {
+                padding: rem(15);
+            }
+        }
+    }
     &__content {
-        background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.48) 100%),
-            url(@img/headerbg.png) center/cover no-repeat;
     }
 
     &__container {
@@ -22,5 +37,25 @@
     &__title {
         @include adaptiveValue("font-size", 150, 32);
         letter-spacing: -0.005em;
+    }
+    &__prev {
+        display: flex;
+        gap: rem(15);
+        margin-top: rem(20);
+        a {
+            font-family: "Gotham";
+            font-weight: 500;
+            font-size: rem(14);
+            line-height: math.div(30, 14);
+            &:not(:last-child) {
+                color: #9b9b9b;
+
+                &::after {
+                    content: "/";
+                    margin-left: rem(15);
+                    pointer-events: none;
+                }
+            }
+        }
     }
 }

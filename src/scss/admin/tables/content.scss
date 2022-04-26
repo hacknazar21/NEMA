@@ -1,0 +1,104 @@
+.admin-content {
+    font-family: "Gotham";
+    padding: rem(25);
+    flex: 1 1 auto;
+
+    &__head {
+    }
+
+    &__pages {
+        font-family: "Plus Jakarta Display", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 100%;
+        margin-bottom: rem(6);
+        span:first-child {
+            color: #a0aec0;
+        }
+        span {
+            &:not(:last-child) {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    &__page {
+        font-weight: 500;
+        font-size: rem(14);
+        line-height: 140%;
+        margin-bottom: rem(20);
+    }
+
+    &__box {
+        background: linear-gradient(126.97deg, rgba(6, 11, 40, 0.74) 28.26%, rgba(10, 14, 35, 0.71) 91.2%);
+        backdrop-filter: blur(120px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 10px;
+        padding: rem(15) rem(23);
+        &:not(:last-child) {
+            margin-bottom: rem(25);
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: 140%;
+        margin-bottom: rem(20);
+    }
+
+    &__table {
+        &.table-4 {
+            .admin-content__row {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+    }
+
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: rem(21) 0;
+        border-bottom: 1px solid #56577a;
+        gap: rem(50);
+        align-items: center;
+        &.table-content {
+            .admin-content__cell:last-child {
+                @media (any-hover: hover) {
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                &::before {
+                    @extend %ic;
+                    content: "\e908";
+                    color: #a0aec0;
+                    font-size: rem(20);
+                }
+            }
+        }
+        &:not(:first-child) {
+            .admin-content__cell {
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &__cell {
+        font-weight: 500;
+
+        &:not(:last-child) {
+            display: flex;
+            align-items: center;
+            gap: rem(15);
+        }
+
+        a {
+            display: block;
+            color: #a0aec0;
+        }
+    }
+}

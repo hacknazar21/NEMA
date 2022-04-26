@@ -1,15 +1,33 @@
 <header class="header">
-	<div class="header__content">
-		<div class="header__container">
-			<div class="header__menu menu">
-				<div class="menu__icon"><button type="button" class=" icon-menu"><span></span></button></div>
-				<nav class="menu__body">
-					<ul class="menu__list">
-						<li class="menu__item"><a href="" class="menu__link"></a></li>
-					</ul>
-				</nav>
-			</div>
+	<div class="header__container">
+		<div class="header__menu menu">
+			<div class="menu__icon"><button type="button" class=" icon-menu"><span></span></button></div>
+			<nav class="menu__body">
+				<ul class="menu__list">
+					<li class="menu__item"><a href="#spolers" data-goto=".spolers" class="menu__link">о фестивале</a>
+					</li>
+					<span></span>
+					<li class="menu__item"><a href="#guests" data-goto=".guests" class="menu__link">гости</a></li>
+					<span></span>
+					<li class="menu__item"><a href="#categories" data-goto=".categories"
+							class="menu__link">категории</a></li>
+					<span></span>
+					<li class="menu__item"><a href="#news" data-goto=".news" class="menu__link">новости</a></li>
+					<span></span>
+					<li class="menu__item"><a href="#gallery" data-goto=".gallery" class="menu__link">галерея</a></li>
+				</ul>
+				<div class="menu__actions actions-menu">
+					<div class="actions-menu__social">
+						<a href="" class="actions-menu__social-link _icon-instagram"></a>
+						<a href="" class="actions-menu__social-link _icon-facebook"></a>
+					</div>
+					<button class="actions-menu__btn">Войти в аккаунт</button>
+				</div>
+			</nav>
 		</div>
+	</div>
+	<div class="header__content">
+
 		<div class="header__title-box">
 			<h1 class="header__title">
 				<div class="header__title-decor">22/02/22</div>
@@ -18,11 +36,8 @@
 			</h1>
 		</div>
 		<h2 class="header__subtitle">Фестиваль лучших блогеров Казахстана</h2>
-		<button class="header__action-btn">Голосовать <span></span></button>
-		<div class="header__social">
-			<a href="" class="header__social-link _icon-instagram"></a>
-			<a href="" class="header__social-link _icon-facebook"></a>
-		</div>
+		<a href="#categories" data-goto=".categories" class="header__action-btn">Голосовать <span></span></a>
+
 		<div class="header__subtext">
 			<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
 		</div>

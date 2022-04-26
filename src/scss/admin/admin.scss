@@ -1,0 +1,11 @@
+.admin {
+    .wrapper {
+        background: url(@img/admin/Background.png) center/cover no-repeat;
+    }
+    .page {
+        height: 100%;
+        display: flex;
+        padding: rem(10);
+        overflow: auto;
+    }
+}

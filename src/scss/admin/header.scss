@@ -1,0 +1,36 @@
+.admin-header {
+    font-family: "Gotham";
+    position: absolute;
+    right: rem(50);
+    top: rem(20);
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+    }
+
+    &__search {
+        background: #0f1535;
+        border: 0.5px solid rgba(226, 232, 240, 0.3);
+        border-radius: 15px;
+        padding: rem(11) rem(13);
+        display: flex;
+        gap: rem(15);
+        button {
+            color: #2d3748;
+            font-size: rem(20);
+        }
+        .input {
+            color: #a0aec0;
+            box-sizing: border-box;
+            background-color: rgba(226, 232, 240, 0);
+        }
+    }
+
+    &__link {
+        display: flex;
+        gap: rem(4);
+        color: #718096;
+        font-weight: 250;
+    }
+}

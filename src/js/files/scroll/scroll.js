@@ -25,8 +25,10 @@ export function pageNavigation() {
 				const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
 				const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
 				const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
-				gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
-				e.preventDefault();
+				if (gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop)) {
+					e.preventDefault();
+
+				}
 			}
 		} else if (e.type === "watcherCallback" && e.detail) {
 			const entry = e.detail.entry;
@@ -65,7 +67,7 @@ export function pageNavigation() {
 		} else if (document.querySelector(`.${getHash()}`)) {
 			goToHash = `.${getHash()}`;
 		}
-		goToHash ? gotoBlock(goToHash, true, 500, 20) : null;
+		goToHash ? gotoBlock(goToHash, false, 500, 0) : null;
 	}
 }
 // Работа с шапкой при скроле
