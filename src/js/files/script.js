@@ -2,6 +2,7 @@
 import { isMobile } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
+import { Vote } from './Vote.js'
 
 document.documentElement.classList.add("loading")
 window.onload = () => {
@@ -12,17 +13,6 @@ window.onload = () => {
         if (headerHeight / 2 < scrollTop) document.querySelector(".guests-categories").classList.add("scrolled");
     });
 
-    const currentPath = location.pathname.replace('.html', '').replace('/', '');
-    const prev = document.querySelector('.header-pages__prev')
-    if (currentPath != '' && prev) {
-        let path = `<a href="/" class="header-pages__main">Главная</a>`
-
-        path += `<a href="/categories.html" class="header-pages__main">Категории</a>`
-        if (currentPath != 'categories')
-            path += `<a href="/${currentPath}.html" class="header-pages__main">${currentPath.toUpperCase()}</a>`
-        prev.innerHTML = path
-
-    }
-
-
+    const vote = new Vote(document.querySelector('[data-vote]'))
+    vote.init()
 }

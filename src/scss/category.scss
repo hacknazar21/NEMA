@@ -4,6 +4,11 @@
 }
 .category {
     .guests-card {
+        &.hover {
+            .guests-card__hover {
+                opacity: 1;
+            }
+        }
         &__footer {
             background-color: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(20px);
@@ -48,14 +53,80 @@
             justify-content: space-between;
             opacity: 0;
             transition: opacity 0.3s ease 0s;
+
             @media (any-hover: hover) {
                 &:hover {
                     opacity: 1;
                 }
             }
         }
+        &.hide{
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 }
+
+.card-hover-nums {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    &.show{
+        opacity: 1;
+        z-index: 1;
+    }
+    .card-hover__header{
+        margin-bottom: rem(0);
+    }
+    &__data {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__num {
+        flex: 0 0 33.3%;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        padding: rem(25) 0;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: rem(30);
+        line-height: 100%;
+        /* identical to box height, or 30px */
+
+        text-align: center;
+        letter-spacing: 0.05em;
+        &.clicked{
+            background-color: #D39538;
+        }
+        &.avl{
+            background-color: rgba(217, 217, 217, 0.2);
+            color: #797979;
+        }
+        &:not(.avl) {
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #D39538;
+                }
+            }
+        }
+    }
+}
+
 .card-hover {
     &__header {
         padding-bottom: rem(30);
@@ -74,6 +145,7 @@
         font-family: "Gotham";
         font-weight: 400;
         font-size: rem(16);
+        @include adaptiveValue("font-size", 16, 14);
         line-height: 140%;
     }
 
@@ -90,7 +162,8 @@
 
     &__counter {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        
         padding: rem(30) rem(70);
         border-top: 1px solid rgba(255, 255, 255, 0.4);
     }
@@ -109,6 +182,7 @@
         font-family: "Gotham";
         font-weight: 700;
         font-size: rem(28);
+        @include adaptiveValue("font-size", 28, 14);
         line-height: math.div(34, 28);
         color: #ffffff;
     }
@@ -140,7 +214,8 @@
     &__value {
         font-family: "Roboto";
         font-weight: 400;
-        font-size: rem(30);
+        font-size: rem(18);
+        text-align: center;
         line-height: 1;
         letter-spacing: 0.05em;
     }

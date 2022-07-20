@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru" class="loading">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body class="admin">
+    <div class="wrapper">
+        
+        <main class="page">
+            @@include('html/admin/tables/_side.htm',{})
+            @@include('html/admin/tables/categories.htm',{})
+        </main>
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

@@ -62,7 +62,7 @@ body {
 	// Сайт загружен
 	.loaded & {
 	}
-
+	overflow: overlay;
 	position: relative;
 	z-index: -1;
 	&:not(.admin) {
@@ -107,6 +107,20 @@ body {
 
 	> main {
 		flex: 1 1 auto;
+		&.reg{
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.48) 100%),
+					url(@img/headerbg.png) center/cover no-repeat;
+				
+				z-index: 1;
+			}
+		}
 	}
 	// Фикс для слайдеров
 	> * {
@@ -127,9 +141,7 @@ body {
 	}
 }
 
-span {
-	pointer-events: none;
-}
+
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
 
 /*
@@ -199,6 +211,7 @@ span {
 @import "admin/side";
 @import "admin/admin";
 @import "admin/tables/content";
+@import "reg";
 
 // Подключение стилей отдельных страниц
 @import "home";
